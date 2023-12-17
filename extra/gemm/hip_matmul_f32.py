@@ -10,7 +10,8 @@ hipallocator = HIPAllocator(device)
 a = hipallocator.alloc(N*N*4) # 4 bytes per float32
 b = hipallocator.alloc(N*N*4)
 c = hipallocator.alloc(N*N*4)
-
+FLOPS = N*N*N*2
+BW = N*N*3*4
 na = np.random.default_rng().standard_normal(size=(N,N), dtype=np.float32).astype(np.float32)
 nb = np.random.default_rng().standard_normal(size=(N,N), dtype=np.float32).astype(np.float32)
 nc = np.empty(N*N, np.float32)
